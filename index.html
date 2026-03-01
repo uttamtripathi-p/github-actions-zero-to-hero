@@ -1,26 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sample Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c1c);
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+    color:white;
+}
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    z-index:1000;
+}
+
+nav h1{
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00f5d4;
+}
+
+section{
+    min-height:100vh;
+    padding:120px 8%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.hero{
+    text-align:center;
+}
+
+.hero h2{
+    font-size:3rem;
+    font-weight:700;
+}
+
+.hero span{
+    color:#00f5d4;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.2rem;
+    opacity:0.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:15px 40px;
+    border-radius:40px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.2);
+    text-decoration:none;
+    color:white;
+    transition:0.4s;
+}
+
+.btn:hover{
+    background:#00f5d4;
+    color:black;
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,245,212,0.5);
+}
+
+.glass-card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:40px;
+    margin-top:40px;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.4s;
+}
+
+.glass-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.skill-box{
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    transition:0.3s;
+}
+
+.skill-box:hover{
+    background:rgba(0,245,212,0.2);
+    transform:scale(1.05);
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+}
+
+@media(max-width:768px){
+    .hero h2{
+        font-size:2.2rem;
+    }
+}
+</style>
 </head>
+
 <body>
-    <header><h1>Your Name</h1></header>
-    <nav><a href="#about">About</a> | <a href="#projects">Projects</a> | <a href="#contact">Contact</a></nav>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Passionate developer creating simple web layouts.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Example: Tribute Page</p>
-            <p>Example: E-commerce Layout</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>GitHub: <a href="https://github.com" target="_blank">Username</a></p>
-        </section>
-    </main>
+
+<nav>
+    <h1>DevOps Engineer</h1>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h2>Hi, I'm <span>Aspiring DevOps Engineer</span></h2>
+    <p>Focused on Linux, Networking, Docker, Git & Automation. Building real-world DevOps foundations step by step.</p>
+    <a href="#projects" class="btn">View My Work</a>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="glass-card">
+        <p>
+            I am actively building my DevOps foundation by mastering Linux systems, networking concepts,
+            containerization with Docker, and automation using Bash scripting.
+            I work with WSL environments, manage Git repositories, configure cron jobs,
+            and practice real-world infrastructure workflows.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Core Skills</h2>
+    <div class="glass-card skills">
+        <div class="skill-box">Linux Administration</div>
+        <div class="skill-box">Networking Fundamentals</div>
+        <div class="skill-box">Docker & Containers</div>
+        <div class="skill-box">Git & Version Control</div>
+        <div class="skill-box">Bash Scripting</div>
+        <div class="skill-box">WSL Environment</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects & Practice</h2>
+    <div class="glass-card">
+        <p>
+            • Log rotation automation using cron<br><br>
+            • Bash scripts for log monitoring & error handling<br><br>
+            • Git workflow practice (clone, fork, merge conflict handling)<br><br>
+            • Docker container deployments<br><br>
+            • System performance monitoring experiments
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2026 | DevOps Portfolio | Built with HTML & CSS
+</footer>
+
 </body>
 </html>
